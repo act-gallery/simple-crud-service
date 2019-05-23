@@ -21,6 +21,11 @@ package gallery.crud;
  */
 
 import act.Act;
+import act.db.jpa.JPADao;
+import gallery.crud.model.Bookmark;
+import org.osgl.mvc.annotation.GetAction;
+
+import javax.inject.Inject;
 
 /**
  * The simple CRUD service app entry
