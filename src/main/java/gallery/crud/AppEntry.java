@@ -21,17 +21,21 @@ package gallery.crud;
  */
 
 import act.Act;
-import act.db.jpa.JPADao;
-import gallery.crud.model.Bookmark;
+import act.app.ActionContext;
 import org.osgl.mvc.annotation.GetAction;
 
-import javax.inject.Inject;
+import static act.controller.Controller.Util.renderTemplate;
 
 /**
  * The simple CRUD service app entry
  */
 @SuppressWarnings("unused")
 public class AppEntry {
+
+    @GetAction
+    public void home(ActionContext context) {
+        renderTemplate("/home.html");
+    }
 
     public static void main(String[] args) throws Exception {
         Act.start();
