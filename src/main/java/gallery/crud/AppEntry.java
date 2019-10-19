@@ -34,7 +34,7 @@ public class AppEntry {
 
     @GetAction
     public void home(ActionContext context) {
-        renderTemplate("/home.html");
+        renderTemplate("/home");
     }
 
     public static void main(String[] args) throws Exception {

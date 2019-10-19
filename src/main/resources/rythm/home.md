@@ -1,4 +1,4 @@
-@extends(base.html, title: "Simple CRUD Service Demo")
+@extends(act.md_base, title: "Simple CRUD Service Demo")
 
 @verbatim() {
 
