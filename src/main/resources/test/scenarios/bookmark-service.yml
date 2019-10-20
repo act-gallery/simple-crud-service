@@ -34,9 +34,7 @@ Scenario(BookmarkService):
           name: Google
   - description: query bookmarks
     request:
-      get: ""
-      params:
-        name: ~oogle
+      get: "?name=~oogle"
     response:
       json:
         size: 1

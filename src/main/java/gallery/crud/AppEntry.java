@@ -21,7 +21,13 @@ package gallery.crud;
  */
 
 import act.Act;
+import act.db.Dao;
+import act.inject.util.LoadResource;
+import act.job.OnAppStart;
+import gallery.crud.model.Bookmark;
 import org.osgl.mvc.annotation.GetAction;
+
+import java.util.List;
 
 import static act.controller.Controller.Util.renderTemplate;
 
@@ -30,6 +36,16 @@ import static act.controller.Controller.Util.renderTemplate;
  */
 @SuppressWarnings("unused")
 public class AppEntry {
+
+    @LoadResource("test/fixtures/bookmarks.yml")
+    private List<Bookmark> bookmarks;
+
+    @OnAppStart
+    public void loadTestData(Dao<?, Bookmark, ?> bookmarkDao) {
+        if (bookmarkDao.count() == 0) {
+            bookmarkDao.save(bookmarks);
+        }
+    }
 
     /**
      * Display the home page.
