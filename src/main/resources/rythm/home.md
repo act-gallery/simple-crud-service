@@ -47,7 +47,7 @@ These are all you need to build up a RESTful service for model `Bookmark`, inclu
 
 ## Play with the service
 
-Try the following links to see the query feature provided by the bookmark RESTful service:
+Try the following links to taste the functions provided by the bookmark RESTful service:
 
 * [List all bookmarks](/api/v1/bookmarks)
 * [List all bookmarks with likes greater than 200](/api/v1/bookmarks?likes=gt_200)
