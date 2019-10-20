@@ -55,6 +55,30 @@ public class AppEntry {
         renderTemplate("/home");
     }
 
+    /**
+     * Display create new bookmark form
+     */
+    @GetAction("add_bookmark")
+    public void newForm() {
+        renderTemplate("/newForm");
+    }
+
+    /**
+     * Display update bookmark form
+     */
+    @GetAction("update_bookmark")
+    public void updateForm() {
+        renderTemplate("/updateForm");
+    }
+
+    /**
+     * Display delete bookmark form
+     */
+    @GetAction("delete_bookmark")
+    public void deleteForm() {
+        renderTemplate("/deleteForm");
+    }
+
     public static void main(String[] args) throws Exception {
         Act.start();
     }

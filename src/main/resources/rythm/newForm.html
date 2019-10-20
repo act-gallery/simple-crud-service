@@ -1,0 +1,30 @@
+@args String title="Add New Bookmark"
+@extends(act.base, title: title)
+
+<h1>@title</h1>
+
+<form id="new-form">
+  <div>
+    <input name="name" placeholder="Name">
+  </div>
+  <div>
+    <input name="url" placeholder="URL" style="width: 500px">
+  </div>
+  <div>
+    <input name="likes" placeholder="Likes">
+  </div>
+  <div>
+    <button id="submit" type="button">Submit</button>
+  </div>
+</form>
+
+@section('moreScripts') {
+<script>
+  $('#submit').on('click', function() {
+    $.postJSON('/api/v1/bookmarks', $('form#new-form').serialize(), function() {
+      alert("new bookmark created")
+      location.href = "/"
+    })
+  })
+</script>
+}

@@ -1,0 +1,28 @@
+@args String title="Delete New Bookmark"
+@extends(act.base, title: title)
+
+<h1>@title</h1>
+
+<select id="sel-bookmarks">
+  <option>Select Bookmark to Delete</option>
+</select>
+
+@section('moreScripts') {
+<script>
+  var lookup = {}
+  $.getJSON('/api/v1/bookmarks', function(bookmarks) {
+    for (var i = 0; i < bookmarks.length; ++i) {
+      var bookmark = bookmarks[i]
+      lookup[bookmark.id] = bookmark
+      $('<option value="' + bookmark.id + '">' + bookmark.name + '</option>').appendTo('#sel-bookmarks')
+    }
+  })
+  $('#sel-bookmarks').on('change', function(){
+    var id = $(this).val()
+    $.delete('/api/v1/bookmarks/' + id, function() {
+      alert("bookmark deleted")
+      location.href = "/"
+    })
+  })
+</script>
+}
