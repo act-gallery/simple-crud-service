@@ -26,7 +26,8 @@ Run automate test
 mvn clean compile act:test
 ```
 
-This will start the application and run automate test scenarios and then shutdown the app. Normally you should add this to your CI pipeline.
+This will start the application and run automate test scenarios and then shutdown the app. Normally you should add this 
+to your CI pipeline.
 
 ## Understanding the application
 
@@ -61,12 +62,16 @@ public class Bookmark implements SimpleBean {
 
     public String url;
 
+    public int likes;
+
 }
 ```
 
-The data structure is simple, we have defined an `id` field, and `name`, `url` to keep track a bookmark.
+The data structure is simple, we have defined an `id` field, and `name`, `url`, `likes` to keep track a bookmark.
 
-The class implements `SimpleBean`, which allows we defined public fields instead of private field plus getter/setter, because ActFramework will enhance the class by generating getter/setter for the public fields defined in a `SimpleBean` typed class. It will also make sure a default constructor is defined in the class.
+The class implements `SimpleBean`, which allows we defined public fields instead of private field plus getter/setter, 
+because ActFramework will enhance the class by generating getter/setter for the public fields defined in a `SimpleBean` 
+typed class. It will also make sure a default constructor is defined in the class.
 
 ### The service class
 
@@ -78,7 +83,9 @@ public class BookmarkService extends SimpleRestfulServiceBase<Integer, Bookmark,
 }
 ```
 
-We noticed there is no single request handler code defined in the service as all of the logic is defined in `SimpleRestfulServiceBase` provided with ActFramework. The only thing app needs to provide is the `UrlContext` of the service class, which will be used to dispatch the request to the service.
+We noticed there is no single request handler code defined in the service as all of the logic is defined in 
+`SimpleRestfulServiceBase` provided with ActFramework. The only thing app needs to provide is the `UrlContext` of the 
+service class, which will be used to dispatch the request to the service.
  
 ## FAQ
 
