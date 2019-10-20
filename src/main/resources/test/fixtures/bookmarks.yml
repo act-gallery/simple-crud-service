@@ -1,0 +1,25 @@
+Bookmark(alibaba):
+  name: Alibaba
+  url: http://alibaba.com
+  likes: 210
+Bookmark(tencent):
+  name: Tencent
+  url: http://tencent.com
+  likes: 189
+Bookmark(huawei):
+  name: Huawei
+  url: http://huawei.com
+  likes: 231
+Bookmark(facebook):
+  name: Facebook
+  url: http://facebook.com
+  likes: 153
+Bookmark(twitter):
+  name: Twitter
+  url: http://twitter.com
+  likes: 207
+Bookmark(aws):
+  name: AWS
+  url: http://aws.amazon.com
+  likes: 200
+

@@ -21,7 +21,6 @@ package gallery.crud;
  */
 
 import act.Act;
-import act.app.ActionContext;
 import org.osgl.mvc.annotation.GetAction;
 
 import static act.controller.Controller.Util.renderTemplate;
@@ -32,8 +31,11 @@ import static act.controller.Controller.Util.renderTemplate;
 @SuppressWarnings("unused")
 public class AppEntry {
 
+    /**
+     * Display the home page.
+     */
     @GetAction
-    public void home(ActionContext context) {
+    public void home() {
         renderTemplate("/home");
     }
 

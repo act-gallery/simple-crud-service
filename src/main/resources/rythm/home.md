@@ -35,4 +35,6 @@ public class BookmarkService extends SimpleRestfulServiceBase<Integer, Bookmark,
 }
 ```
 
+
+
 }

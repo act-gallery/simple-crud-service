@@ -1,4 +1,6 @@
 Scenario(BookmarkService):
+  fixtures:
+    - bookmarks.yml
   urlContext: /api/v1/bookmarks
   interactions:
   - description: create google bookmark
@@ -6,7 +8,8 @@ Scenario(BookmarkService):
       post: ""
       params:
         url: http://google.com
-        name: google
+        name: Google
+        likes: 271
     response:
       json:
         id:
@@ -19,15 +22,26 @@ Scenario(BookmarkService):
     response:
       json:
         url: http://google.com
-        name: google
+        name: Google
   - description: list all bookmarks
     request:
       get: ""
     response:
       json:
+        size:
+          - gt: 1
+        ?:
+          name: Google
+  - description: query bookmarks
+    request:
+      get: ""
+      params:
+        name: ~oogle
+    response:
+      json:
         size: 1
         0:
-          name: google
+          name: Google
   - description: delete google bookmark
     request:
       delete: ${googleId}

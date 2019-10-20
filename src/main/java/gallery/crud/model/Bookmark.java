@@ -15,4 +15,6 @@ public class Bookmark implements SimpleBean {
 
     public String url;
 
+    public int likes;
+
 }
